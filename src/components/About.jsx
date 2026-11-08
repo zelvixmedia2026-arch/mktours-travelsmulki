@@ -1,4 +1,3 @@
-
 import {
   ArrowUpRight,
   Compass,
@@ -13,42 +12,9 @@ export default function About() {
       <div className="about-glow"></div>
       <div className="about-pattern"></div>
 
-      <div className="about-container">
+      <div className="about-container centered-about">
 
-        {/* LEFT VISUAL */}
-        <div className="about-visual">
-
-          <div className="about-image-main">
-            <img
-              src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=90"
-              alt="Beautiful scenic travel landscape"
-            />
-            <div className="image-shade"></div>
-          </div>
-
-          <div className="about-image-small">
-            <img
-              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=90"
-              alt="Mountain road travel"
-            />
-          </div>
-
-          <div className="about-stamp">
-            <span className="stamp-mk">MK</span>
-            <span>YOUR JOURNEY</span>
-            <span>OUR PRIORITY</span>
-          </div>
-
-          <div className="about-location">
-            <MapPin size={14} />
-            <span>MULKI, KARNATAKA</span>
-          </div>
-
-          <div className="about-orbit"></div>
-
-        </div>
-
-        {/* RIGHT CONTENT */}
+        {/* RIGHT CONTENT - Now centered entirely */}
         <div className="about-content">
 
           <div className="about-eyebrow">
@@ -57,10 +23,7 @@ export default function About() {
           </div>
 
           <h2>
-            More than just
-            <br />
-            a journey.
-            <br />
+            More than just a journey.<br />
             <em>A better way to travel.</em>
           </h2>
 

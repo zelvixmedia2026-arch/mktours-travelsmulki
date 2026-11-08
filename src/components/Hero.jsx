@@ -1,34 +1,72 @@
-
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   ArrowUpRight,
-  MapPin
+  MapPin,
 } from "lucide-react";
 
+const slides = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=90",
+    overline: "DISCOVER THE BEAUTY OF EVERY JOURNEY",
+    title: "Explore Beyond",
+    highlight: "Boundaries.",
+    description:
+      "From peaceful landscapes to unforgettable destinations, discover more with MK Tours and Travels.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=90",
+    overline: "YOUR NEXT ADVENTURE STARTS HERE",
+    title: "Chase New",
+    highlight: "Horizons.",
+    description:
+      "Experience breathtaking mountain escapes and beautiful destinations with comfortable travel.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90",
+    overline: "MAKE EVERY MILE MEMORABLE",
+    title: "Travel More.",
+    highlight: "Live More.",
+    description:
+      "Whether it's a family holiday or a weekend getaway, let us make your journey memorable.",
+  },
+];
+
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const slide = slides[currentSlide];
+
   return (
     <section className="mk-hero" id="home">
 
-      {/* Background Image */}
+      {/* Scenic Background Slideshow */}
       <div className="mk-hero-bg">
-        <img
-          src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=2200&q=90"
-          alt="Premium Mercedes-Benz luxury car"
-        />
+        {slides.map((item, index) => (
+          <img
+            key={item.image}
+            src={item.image}
+            alt={`Scenic travel destination ${index + 1}`}
+            className={currentSlide === index ? "active" : ""}
+          />
+        ))}
       </div>
 
       <div className="mk-hero-overlay" />
 
       {/* Navigation */}
       <header className="mk-header">
-
-        {/* <a href="#home" className="mk-brand">
-          <span className="mk-brand-symbol">MK</span>
-          <span className="mk-brand-name">
-            TOURS & TRAVELS
-          </span>
-        </a> */}
-
         <nav className="mk-nav">
           <a className="active" href="#home">Home</a>
           <a href="#about">About</a>
@@ -42,11 +80,10 @@ export default function Hero() {
           Book Now
           <ArrowRight size={16} />
         </a>
-
       </header>
 
-      {/* Hero Content */}
-      <div className="mk-hero-content">
+      {/* Changing Hero Content */}
+      <div className="mk-hero-content" key={currentSlide}>
 
         <div className="mk-location">
           <MapPin size={17} />
@@ -54,23 +91,20 @@ export default function Hero() {
         </div>
 
         <div className="mk-overline">
-          TRAVEL IN COMFORT. ARRIVE IN STYLE.
+          {slide.overline}
         </div>
 
         <h1>
-          Every Journey
+          {slide.title}
           <br />
-          Deserves <span>Excellence.</span>
+          <span>{slide.highlight}</span>
         </h1>
 
         <p className="mk-description">
-          Experience comfortable, reliable and personalised
-          travel with MK Tours and Travels. Wherever you're
-          headed, let us take you there.
+          {slide.description}
         </p>
 
         <div className="mk-buttons">
-
           <a href="#contact" className="mk-book-btn">
             Book Your Journey
             <ArrowUpRight size={19} />
@@ -79,7 +113,6 @@ export default function Hero() {
           <a href="#fleet" className="mk-fleet-btn">
             Explore Our Fleet
           </a>
-
         </div>
 
       </div>

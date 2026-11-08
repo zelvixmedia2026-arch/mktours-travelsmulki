@@ -8608,3 +8608,1082 @@ body {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
+
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY OVERRIDE (PREMIUM MODERN STYLE)
+========================================================= */
+
+:root {
+  /* Replace old fonts with new premium fonts */
+  --font-main: 'Inter', sans-serif !important;
+  --font-display: 'Outfit', sans-serif !important;
+}
+
+/* 1. Force Body Text to Inter */
+body, 
+p, 
+a, 
+span, 
+div, 
+input, 
+textarea, 
+select, 
+button,
+.mk-nav a,
+.nav-links a {
+  font-family: 'Inter', sans-serif !important;
+  letter-spacing: -0.01em; /* Slightly tighter for a modern look */
+}
+
+/* 2. Force Headings to Outfit */
+h1, h2, h3, h4, h5, h6,
+.brand-text span,
+.brand-mark,
+.mk-brand-name,
+.mk-brand-symbol,
+.stamp-mk,
+.mk-gallery-heading h2,
+.mk-destinations-heading h2,
+.mk-fleet-heading h2,
+.mk-contact-heading h2,
+.mk-coming-soon h2 {
+  font-family: 'Outfit', sans-serif !important;
+  letter-spacing: -0.02em !important; /* Tight tracking looks premium on large headings */
+}
+
+/* 3. Fix the Hero H1 & Section Headings */
+.hero h1,
+.mk-hero-content h1,
+.about-content h2,
+.services-heading h2,
+.why-heading h2,
+.reviews-heading h2 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important; /* Make it bolder and punchier */
+  line-height: 1.1 !important;
+}
+
+/* 4. Remove the old italic serif look from specific words */
+/* (Since Outfit is a modern sans-serif, italics can look out of place) */
+.hero h1 span,
+.mk-hero-content h1 span,
+.about-content h2 em,
+.services-heading h2 em,
+.why-heading h2 em,
+.reviews-heading h2 em {
+  font-style: normal !important; 
+  font-weight: 600 !important;
+}
+
+/* 5. Polish the smaller text */
+.services-heading p,
+.about-description,
+.why-heading p,
+.reviews-heading p,
+.mk-contact-heading p,
+.mk-fleet-heading > p,
+.mk-destinations-heading > p,
+.mk-gallery-heading p {
+  font-size: 15px !important; /* Slightly larger for better readability */
+  line-height: 1.8 !important;
+  font-weight: 400 !important;
+}
+
+/* 6. Buttons and CTA Links */
+.primary-btn,
+.secondary-btn,
+.mk-primary-btn,
+.mk-outline-btn,
+.mk-book-btn,
+.mk-submit-btn,
+.nav-cta,
+.mk-nav-cta {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase;
+  font-size: 11px !important;
+}
+
+
+
+/* =========================================
+   FIX: STRETCH MAIN IMAGE NOW THAT SMALL IMAGE IS GONE
+========================================= */
+
+.about-visual {
+  min-height: 580px !important; /* Adjust height if needed */
+}
+
+.about-image-main {
+  width: 100% !important;
+  height: 100% !important;
+  right: 0 !important; 
+  bottom: 0 !important;
+  border-radius: 8px; /* Optional: adds slight rounded corners */
+}
+
+/* Make sure the location text stays readable over the image */
+.about-location {
+  z-index: 10 !important;
+  background: rgba(10, 25, 49, 0.6) !important; /* Dark background */
+  padding: 6px 12px !important;
+  border-radius: 4px !important;
+  backdrop-filter: blur(4px);
+}
+
+
+/* =========================================
+   FIX: CENTERED ABOUT SECTION (NO IMAGES)
+========================================= */
+
+/* Force the container to be a single centered column */
+.about-container.centered-about {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  max-width: 800px !important; /* Keeps the text from stretching too wide */
+  margin: 0 auto !important;
+  gap: 0 !important;
+}
+
+/* Center the Eyebrow */
+.about-content .about-eyebrow {
+  justify-content: center !important;
+  margin-bottom: 20px !important;
+}
+
+/* Center the Heading */
+.about-content h2 {
+  text-align: center !important;
+  margin-bottom: 25px !important;
+}
+
+/* Center the Paragraph */
+.about-content .about-description {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 650px !important;
+}
+
+/* Center the Features Grid */
+.about-features {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 30px !important;
+  margin-top: 40px !important;
+  width: 100%;
+}
+
+/* Stack feature icons on top of text for a clean centered look */
+.about-feature {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 12px !important;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Ensure feature text is centered */
+.about-feature h4,
+.about-feature p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Center the Button */
+.about-content .about-link {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+  margin-top: 40px !important;
+}
+
+
+
+/* =========================================
+   NEW NAVBAR DESIGN (TOP BAR + FLOATING PILL)
+========================================= */
+
+/* 1. Header Wrapper */
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Top Contact Bar */
+.top-contact-bar {
+  background: #4A7FA7; /* Change to #1CB0F6 for the light blue from image */
+  color: #FFFFFF;
+  padding: 10px 5%;
+  font-size: 12px;
+  font-family: var(--font-main), sans-serif;
+}
+
+.top-bar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.top-welcome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.top-social-icon {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.top-social-icon:hover {
+  opacity: 1;
+}
+
+.top-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.top-info-item:hover {
+  opacity: 0.8;
+}
+
+/* 3. Floating Nav Wrapper */
+.floating-nav-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px; /* Overlaps the background below */
+}
+
+/* 4. The Floating Pill */
+.floating-nav {
+  background: #0A1931; /* Change to #8C2A8E for the purple from image */
+  width: 90%;
+  max-width: 1300px;
+  border-radius: 100px;
+  padding: 8px 12px 8px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px rgba(10, 25, 49, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Brand inside Pill */
+.floating-nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.floating-nav .brand-text span {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.floating-nav .brand-text small {
+  color: #B3CFE5;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* Links inside Pill */
+.floating-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.floating-nav .nav-links a {
+  color: #F6FAFD;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.floating-nav .nav-links a:hover {
+  color: #B3CFE5;
+}
+
+/* CTA Button inside Pill */
+.floating-nav .nav-cta {
+  background: #4A7FA7;
+  color: #FFFFFF;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.floating-nav .nav-cta:hover {
+  background: #B3CFE5;
+  color: #0A1931;
+}
+
+/* Hide Menu Toggle on Desktop */
+.floating-nav .menu-toggle {
+  display: none;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE ADJUSTMENTS
+========================================= */
+@media (max-width: 950px) {
+  .top-contact-info {
+    display: none; /* Hide detailed contact info on mobile */
+  }
+  
+  .top-bar-inner {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-nav {
+    padding: 8px 20px;
+    border-radius: 50px;
+  }
+
+  .floating-nav .desktop-cta {
+    display: none; /* Hide CTA on mobile */
+  }
+
+  .floating-nav .menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    z-index: 10000;
+  }
+
+  /* Mobile Dropdown */
+  .floating-nav .nav-links {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #0A1931;
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .floating-nav .nav-links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .floating-nav .nav-links a {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+  }
+}
+
+/* Adjust Hero Section to account for new taller navbar */
+.mk-hero {
+  padding-top: 220px !important; 
+}
+
+
+/* =========================================
+   FIX: HIDE OLD NAVBAR & SPACING
+========================================= */
+
+/* 1. Hide the old navbar completely */
+.mk-header, 
+.navbar, 
+.nav-container,
+.mk-nav {
+  display: none !important;
+}
+
+/* 2. Ensure the new floating nav is solid and on top */
+.main-header {
+  z-index: 99999 !important;
+}
+
+.floating-nav {
+  background: #0A1931 !important; /* Forces a solid background so nothing shows through */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important; 
+}
+
+/* 3. Push the Hero content down so the new tall navbar doesn't overlap it */
+.hero-content,
+.mk-hero-content {
+  padding-top: 140px !important; 
+}
+
+
+
+
+.overlap-container {
+  position: relative;
+  z-index: 20;
+  margin-top: -60px; /* Pulls it up over the section above */
+  padding: 0 5%;
+}
+
+.glass-card {
+  background: rgba(26, 61, 99, 0.6); /* Semi-transparent dark blue */
+  backdrop-filter: blur(16px);       /* The frosted glass blur */
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(179, 207, 229, 0.2); /* Subtle light border */
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   GLASSMORPHISM EFFECT FOR SERVICE CARDS
+========================================= */
+
+.service-card {
+  /* Semi-transparent background */
+  background: rgba(26, 61, 99, 0.4) !important; 
+  /* The actual blur effect */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  /* Frosted border */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.service-card:hover {
+  /* Darken slightly on hover */
+  background: rgba(26, 61, 99, 0.6) !important; 
+  border-color: rgba(179, 207, 229, 0.4) !important;
+  transform: translateY(-8px);
+}
+
+
+
+/* =========================================================
+   GLASSMORPHISM SERVICE CARDS
+========================================================= */
+
+.mk-services {
+  /* Ensure the section background is dark so the glass stands out */
+  background: #0A1931 !important;
+}
+
+.service-card.glass-effect {
+  /* 1. Semi-transparent background (dark blue with 40% opacity) */
+  background: rgba(26, 61, 99, 0.4) !important;
+  
+  /* 2. The actual blur effect */
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  
+  /* 3. A very subtle white border to simulate the edge of glass */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  
+  /* 4. Slightly lighter shadow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+  
+  /* Transition for smooth hover */
+  transition: all 0.4s ease !important;
+}
+
+/* Hover Effect - Make the glass slightly brighter and lift it */
+.service-card.glass-effect:hover {
+  background: rgba(26, 61, 99, 0.6) !important;
+  border-color: rgba(179, 207, 229, 0.3) !important;
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-8px);
+}
+
+/* Fix text and icon colors to pop against the glass */
+.service-card.glass-effect .service-card-content h3 {
+  color: #FFFFFF !important;
+}
+
+.service-card.glass-effect .service-card-content p {
+  color: #D0E3F5 !important; /* Slightly brighter blue for readability */
+}
+
+/* Make the icons pop more inside the glass */
+.service-card.glass-effect .service-icon {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.service-card.glass-effect:hover .service-icon {
+  background: #4A7FA7 !important;
+  border-color: #4A7FA7 !important;
+}
+
+
+/* =========================================================
+   EMERGENCY FIX: MAKE GLASS CARDS VISIBLE & FIX ANIMATION
+========================================================= */
+
+/* 1. Force the text to be visible (Fix for JS animation failing) */
+.mk-services .reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 2. Fix the Glassmorphism Contrast */
+.service-card.glass-effect {
+  /* Make the glass lighter so it stands out from the dark background */
+  background: rgba(255, 255, 255, 0.05) !important; 
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  
+  /* Add a distinct glowing border */
+  border: 1px solid rgba(179, 207, 229, 0.3) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 3. Force all text inside the cards to be bright */
+.service-card.glass-effect h3 {
+  color: #FFFFFF !important;
+}
+
+.service-card.glass-effect p {
+  color: #D0E3F5 !important; 
+}
+
+.service-card.glass-effect .service-number {
+  color: #B3CFE5 !important;
+}
+
+.service-card.glass-effect .service-tag {
+  color: #8AB4F8 !important; /* Brighter blue for tags */
+}
+
+.service-card.glass-effect .service-icon {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* 4. Fix the "Enquire Now" link */
+.service-card.glass-effect .service-card-bottom a {
+  color: #FFFFFF !important;
+}
+
+.service-card.glass-effect .service-card-bottom a svg {
+  color: #8AB4F8 !important;
+}
+
+/* 5. Make hover state obvious */
+.service-card.glass-effect:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #8AB4F8 !important;
+  transform: translateY(-8px) !important;
+}
+
+
+/* =========================================
+   OPTION B: SINGLE SMOOTH ARCH
+========================================= */
+.mk-about {
+  position: relative;
+  padding-bottom: 100px !important;
+  overflow: visible !important;
+}
+
+.mk-about::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: #0A1931; /* Matches the Services section */
+  border-radius: 100% 100% 0 0; /* Creates the single smooth curve */
+  z-index: 10;
+}
+
+
+/* =========================================
+   REVIEWS SECTION - LIGHT BLUE THEME
+========================================= */
+
+/* 1. Change Background to Light Blue */
+.mk-reviews {
+  background: #F6FAFD !important; 
+  color: #0A1931 !important;
+}
+
+/* 2. Fix Heading Typography */
+.mk-reviews-heading h2,
+.reviews-heading h2 {
+  color: #0A1931 !important; /* Dark text for heading */
+}
+
+.mk-reviews-heading h2 span,
+.reviews-heading h2 em,
+.reviews-heading h2 span {
+  color: #4A7FA7 !important; /* Medium blue accent */
+}
+
+.mk-section-label,
+.reviews-eyebrow,
+.reviews-eyebrow span {
+  color: #4A7FA7 !important;
+  background-color: transparent;
+}
+
+.reviews-eyebrow span {
+  background-color: #4A7FA7 !important;
+}
+
+.mk-reviews-heading p,
+.reviews-heading p {
+  color: #4A7FA7 !important; /* Medium blue for subtitle */
+}
+
+/* 3. Fix the Review Cards (If you have them visible) */
+.review-card,
+.mk-review-card {
+  background: #FFFFFF !important; /* White cards */
+  border: 1px solid rgba(10, 25, 49, 0.08) !important; /* Soft border */
+  box-shadow: 0 10px 30px rgba(10, 25, 49, 0.05) !important;
+}
+
+/* Card Text */
+.review-text,
+.mk-review-text {
+  color: #1A3D63 !important; /* Dark blue text inside cards */
+}
+
+.review-author h4,
+.mk-review-author h4 {
+  color: #0A1931 !important;
+}
+
+.review-author span,
+.mk-review-author span {
+  color: #4A7FA7 !important;
+}
+
+.review-card-top span,
+.mk-sample-label {
+  color: #4A7FA7 !important;
+  border-color: rgba(74, 127, 167, 0.3) !important;
+}
+
+/* Card Icons / Stars */
+.review-stars,
+.mk-review-stars,
+.review-card-top svg {
+  color: #4A7FA7 !important;
+}
+
+/* Author Avatar */
+.review-avatar,
+.mk-review-avatar {
+  background: #4A7FA7 !important;
+  color: #FFFFFF !important;
+}
+
+/* Fade effect for marquee (if you are using it) */
+.mk-review-marquee::before {
+  background: linear-gradient(to right, #F6FAFD, transparent) !important;
+}
+.mk-review-marquee::after {
+  background: linear-gradient(to left, #F6FAFD, transparent) !important;
+}
+
+
+/* =========================================
+   DOME EFFECT: SCALLOPED / CLOUD
+========================================= */
+
+.mk-about {
+  position: relative;
+  padding-bottom: 140px !important; /* Extra space for the bumps */
+  overflow: visible !important;
+  z-index: 1;
+}
+
+.mk-about::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 70px; /* Height of the bumps */
+  
+  /* MUST match the background color of the section BELOW it */
+  background-image: radial-gradient(circle at 50% 100%, transparent 50px, #0A1931 51px);
+  background-size: 100px 70px;
+  background-repeat: repeat-x;
+  z-index: 10;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .mk-about {
+    padding-bottom: 100px !important;
+  }
+  .mk-about::after {
+    height: 40px;
+    background-size: 60px 40px;
+    background-image: radial-gradient(circle at 50% 100%, transparent 28px, #0A1931 29px);
+  }
+}
+
+
+/* =========================================
+   SINGLE SMOOTH ARCH DOME (FORCED)
+========================================= */
+.mk-about {
+  position: relative !important;
+  padding-bottom: 120px !important; /* Gives space for the curve */
+  overflow: visible !important;
+  z-index: 2 !important; /* Forces the about section above the next one */
+  background-color: #F6FAFD !important; /* The color of the About section */
+}
+
+.mk-about::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -1px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 120px !important;
+  background: #0A1931 !important; /* The color of the Services section */
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0 !important; /* Perfect smooth curve */
+  z-index: 10 !important;
+  pointer-events: none;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .mk-about {
+    padding-bottom: 60px !important;
+  }
+  .mk-about::after {
+    height: 60px !important;
+  }
+}
+
+
+/* =========================================
+   BULLETPROOF DOWNWARD DOME (Attached to Next Section)
+========================================= */
+
+/* 1. Remove the old curve so it doesn't conflict */
+.mk-services::after {
+  display: none !important;
+}
+
+/* 2. Target the section immediately following Services */
+.mk-services + section,
+.mk-services + div {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* 3. Create the upward curve at the top of the next section */
+.mk-services + section::before,
+.mk-services + div::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -1px !important; /* Sits exactly at the top */
+  left: 0 !important;
+  width: 100% !important;
+  height: 100px !important;
+  
+  /* MUST MATCH the background color of the Services section */
+  background: #0A1931 !important; 
+  
+  /* This creates a curve bulging DOWN into the next section */
+  border-radius: 0 0 50% 50% / 0 0 100% 100% !important; 
+  
+  z-index: -1 !important; /* Keeps it behind the text, but on top of the white background */
+  pointer-events: none;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+  .mk-services + section::before,
+  .mk-services + div::before {
+    height: 50px !important;
+  }
+}
+
+
+/* =========================================
+   FIX: ABOUT FEATURES (SINGLE ROW LAYOUT)
+========================================= */
+
+/* 1. Make the 3 features sit in one row */
+.about-features {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 40px auto !important;
+}
+
+/* 2. Align icon and text horizontally inside each feature */
+.about-feature {
+  display: flex !important;
+  flex-direction: row !important; /* Puts icon next to text */
+  align-items: flex-start !important;
+  text-align: left !important;
+  gap: 15px !important;
+  background: transparent !important;
+}
+
+/* 3. Fix the text container to stack title and description */
+.about-feature > div:last-child {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.about-feature h4 {
+  text-align: left !important;
+  margin: 0 0 5px 0 !important;
+  font-size: 15px !important;
+  color: #0A1931 !important;
+}
+
+.about-feature p {
+  text-align: left !important;
+  margin: 0 !important;
+  font-size: 13px !important;
+  color: #4A7FA7 !important;
+  line-height: 1.5 !important;
+}
+
+/* 4. Fix the icon so it doesn't shrink */
+.about-feature .feature-icon {
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE (Stack back to 1 column)
+========================================= */
+@media (max-width: 900px) {
+  .about-features {
+    grid-template-columns: 1fr !important; /* 1 column on mobile */
+    max-width: 400px !important;
+  }
+}
+
+
+
+/* HERO BACKGROUND SLIDER */
+
+.mk-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.mk-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.mk-hero-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transform: scale(1.06);
+
+  transition:
+    opacity 1.5s ease-in-out,
+    transform 5s ease-in-out;
+}
+
+.mk-hero-bg img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.mk-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Keep hero content above the slideshow */
+
+.mk-header,
+.mk-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+
+/* SCENIC HERO SLIDESHOW */
+
+.mk-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.mk-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.mk-hero-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transform: scale(1.07);
+
+  transition:
+    opacity 1.5s ease-in-out,
+    transform 6s ease-in-out;
+}
+
+.mk-hero-bg img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Dark blue overlay */
+
+.mk-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Animate changing text */
+
+.mk-hero-content {
+  animation: heroContentFade 1.1s ease both;
+}
+
+@keyframes heroContentFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mk-header,
+.mk-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* =====================================
+   MK TOURS - REFERENCE CLOUD DOME
+===================================== */
+
+.mk-about {
+  position: relative;
+  background: #ffffff;
+  isolation: isolate;
+  margin-top: 0;
+}
+
+/* Exact cloud-style transition */
+.mk-about::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 190px;
+  top: -185px;
+
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 190' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' d='M0 190 L0 145 C35 55 125 55 180 145 C225 95 290 95 360 145 C410 100 485 100 550 155 C610 90 700 90 765 155 C820 115 890 115 940 165 C950 70 1050 55 1130 145 C1190 85 1270 85 1340 155 C1360 35 1480 10 1600 155 L1600 190 Z'/%3E%3C/svg%3E");
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.mk-about .about-container {
+  position: relative;
+  z-index: 1;
+}
