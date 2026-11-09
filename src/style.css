@@ -9687,3 +9687,66 @@ h1, h2, h3, h4, h5, h6,
   position: relative;
   z-index: 1;
 }
+
+
+
+
+/* =========================================
+   MAKE "MK TOURS" TEXT BOLDER
+========================================= */
+
+.floating-nav .brand-text span {
+  font-weight: 900 !important; /* Makes it extra bold */
+  font-size: 17px !important;  /* Slightly larger for more impact */
+  letter-spacing: 1.5px !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adds a subtle shadow to make it pop */
+}
+
+/* Optional: Make the subtitle slightly bolder too so it balances out */
+.floating-nav .brand-text small {
+  font-weight: 600 !important;
+  color: #B3CFE5 !important;
+}
+
+
+
+/* =========================================
+   BIGGER TYPOGRAPHY FOR SERVICE CARDS
+========================================= */
+
+/* 1. The Numbers (01, 02, etc.) */
+.mk-services .service-number {
+  font-size: 24px !important; 
+}
+
+/* 2. The Small Tag (24/7 TRANSFERS, etc.) */
+.mk-services .service-tag {
+  font-size: 10px !important;
+  letter-spacing: 2.5px !important;
+}
+
+/* 3. The Main Title (Airport & Railway Transfers) */
+.mk-services .service-card-content h3 {
+  font-size: 22px !important; /* Increased from 20px */
+  line-height: 1.3 !important;
+  margin-bottom: 12px !important;
+}
+
+/* 4. The Description Text */
+.mk-services .service-card-content p {
+  font-size: 14px !important; /* Increased from 13px */
+  line-height: 1.6 !important;
+}
+
+/* 5. The "Enquire Now" Link */
+.mk-services .service-card-bottom a {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+/* 6. The Icons (make them slightly bigger to match the text) */
+.mk-services .service-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+}
