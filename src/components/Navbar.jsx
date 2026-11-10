@@ -45,7 +45,7 @@ export default function Navbar() {
           
           <a href="#home" className="brand">
             <div className="brand-text">
-              <span>MK TRAVELS</span>
+              <span>MK TOURS AND TRAVELS</span>
               
             </div>
           </a>
